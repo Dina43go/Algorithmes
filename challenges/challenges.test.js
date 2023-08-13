@@ -28,6 +28,10 @@ describe("Roman Converter XXIV" , function () {
         expect(convertToRoman(68)).toBe("LXVIII")
     })
     test("test 4", ()=> {
+        expect(convertToRoman(1004)).toBe("MIV")
+    })
+
+    test("test 4", ()=> {
         expect(convertToRoman(3999)).toBe("MMMCMXCIX")
     })
 })

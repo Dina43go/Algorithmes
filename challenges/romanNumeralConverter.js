@@ -44,7 +44,7 @@ export default function convertToRoman(num) {
         nextRomanCode = converterMap[nextIdx][0]
 
 
-        if(num > nextRomanValue && num < currentRomanValue || nextIdx == 0 && num < 4) {
+        if(num > nextRomanValue && num < currentRomanValue || num < 4) {
             currentRomanValue = nextRomanValue
             currentRomanCode = nextRomanCode
         }
