@@ -1,0 +1,15 @@
+{
+  "name": "algorithmes",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": "https://github.com/Dina43go/Algorithmes.git",
+  "author": "Luc Changodina <luckdina45@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^0.34.1"
+  }
+}
