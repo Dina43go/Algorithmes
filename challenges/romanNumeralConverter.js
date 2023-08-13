@@ -13,7 +13,9 @@ let converterMap = [
     ["IV" ,	4],
     ["I" ,	1],
 ]
+// reverse
 converterMap = converterMap.reverse()
+
 function multiplySring(n , code) {
     let sum = ""
     for(let i=0 ; i < n ; i++) {
@@ -24,46 +26,46 @@ function multiplySring(n , code) {
   
 export default function convertToRoman(num) {
     let idx = converterMap.length
-    let roman = ""
-    let current = 0
-    let next = null;
-    let currentCode = ""
-    let nextCode = null
+    let output = ""
+    let currentRomanCode = ""
+    let currentRomanValue = 0
+    let nextRomanCode = null
+    let nextRomanValue = null;
     
     while(idx > 0) {
         idx--
         if(num == 0) break
     
-        current = converterMap[idx][1]
-        currentCode = converterMap[idx][0]
+        currentRomanCode = converterMap[idx][0]
+        currentRomanValue = converterMap[idx][1]
 
         const nextIdx = idx -1
     
-        next = converterMap[nextIdx][1]
-        nextCode = converterMap[nextIdx][0]
+        nextRomanValue = converterMap[nextIdx][1]
+        nextRomanCode = converterMap[nextIdx][0]
 
 
-        if(num > next && num < current || nextIdx == 0 && num < 4) { // 40 && 10 | 4 && 1
-        current = next
-        currentCode = nextCode
+        if(num > nextRomanValue && num < currentRomanValue || nextIdx == 0 && num < 4) { // 40 && 10 | 4 && 1
+            currentRomanValue = nextRomanValue
+            currentRomanCode = nextRomanCode
         }
-        if(num < current) continue
+        if(num < currentRomanValue) continue
 
-        if(num == current) {
-            roman += currentCode
+        if(num == currentRomanValue) {
+            output += currentRomanCode
             break
-        } else if(num == next) {
-            roman += nextCode
+        } else if(num == nextRomanValue) {
+            output += nextRomanCode
             break
         }
 
-        let rest = num % current //8
-        let nx = num / current
+        let rest = num % currentRomanValue //8
+        let nx = num / currentRomanValue
         nx = Math.floor(nx)
 
 
-        roman += multiplySring(nx , currentCode)
+        output += multiplySring(nx , currentRomanCode)
         num = rest
     }
-    return roman;
+    return output;
 }
