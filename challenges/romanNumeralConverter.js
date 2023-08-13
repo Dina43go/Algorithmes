@@ -39,8 +39,7 @@ export default function convertToRoman(num) {
         currentRomanCode = converterMap[idx][0]
         currentRomanValue = converterMap[idx][1]
 
-        const nextIdx = idx -1
-    
+        const nextIdx = idx - 1
         nextRomanValue = converterMap[nextIdx][1]
         nextRomanCode = converterMap[nextIdx][0]
 
