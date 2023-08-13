@@ -44,7 +44,7 @@ export default function convertToRoman(num) {
         nextRomanCode = converterMap[nextIdx][0]
 
 
-        if(num > nextRomanValue && num < currentRomanValue || nextIdx == 0 && num < 4) { // 40 && 10 | 4 && 1
+        if(num > nextRomanValue && num < currentRomanValue || nextIdx == 0 && num < 4) {
             currentRomanValue = nextRomanValue
             currentRomanCode = nextRomanCode
         }
@@ -58,7 +58,7 @@ export default function convertToRoman(num) {
             break
         }
 
-        let rest = num % currentRomanValue //8
+        let rest = num % currentRomanValue
         let nx = num / currentRomanValue
         nx = Math.floor(nx)
 
